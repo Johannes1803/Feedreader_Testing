@@ -26,7 +26,7 @@ $(function() {
          * and that the URL is not empty.
          */
 
-         it('all have valid URLs', function(){
+        it('all have valid URLs', function(){
             // loop over array of feeds
             for (var i =0; i< allFeeds.length; i++){
                 (function(testUrl) {
@@ -35,22 +35,22 @@ $(function() {
                 // wrap your tests inside a function and imme
                 //diatley invoke to avoid closure problems
                 })(allFeeds[i]);
-            };
-         });
+            }
+        });
  
 
         /* Test: Loop through each feed
          * in the allFeeds object and ensure it has a name defined
          * and that the name is not empty.
          */
-         it('all have a valid name', function(){
+        it('all have a valid name', function(){
             for (var i =0; i< allFeeds.length; i++) {
                 (function(testName) {
                     expect(testName.name).toBeDefined();
                     expect(testName.name.length).not.toBe(0);
                 })(allFeeds[i]);
-            };
-         });
+            }
+        });
     });
 
 
@@ -104,11 +104,10 @@ $(function() {
             });
         });
 
-        it('load succesfully', function(done){
+        it('load succesfully', function(){
             // after callback returned expect at least 
             // one entry within feed container
-            expect($('.entry').length).toBeGreaterThan(0);
-            done();
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
